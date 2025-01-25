@@ -1,0 +1,123 @@
+[
+    {
+      "product_id": 1,
+      "product_title": "Smartphone Pro Max",
+      "product_image": "https://i.ibb.co.com/cgffCt8/download.jpg",
+      "category": "Smartphones",
+      "price": 999,
+      "description": "A high-performance smartphone with advanced features.",
+      "Specification": ["6.7-inch display", "128GB storage", "5000mAh battery"],
+      "availability": true
+    },
+    {
+      "product_id": 2,
+      "product_title": "Budget Smartphone",
+      "product_image": "https://i.ibb.co.com/vh1R18Z/phone2.jpg",
+      "category": "Smartphones",
+      "price": 299,
+      "description": "An affordable smartphone for everyday use.",
+      "Specification": ["6.1-inch display", "64GB storage", "4000mAh battery"],
+      "availability": true
+    },
+    {
+      "product_id": 3,
+      "product_title": "Gaming Smartphone",
+      "product_image": "https://i.ibb.co.com/7zDTM0P/phone3.jpg",
+      "category": "Smartphones",
+      "price": 799,
+      "description": "A smartphone designed for gaming enthusiasts.",
+      "Specification": ["6.8-inch display", "256GB storage", "6000mAh battery"],
+      "availability": false
+    },
+    {
+      "product_id": 4,
+      "product_title": "4K Smart TV",
+      "product_image": "https://i.ibb.co.com/LhrXb21/tel1.jpg",
+      "category": "Televisions",
+      "price": 599,
+      "description": "A sleek 4K Smart TV with vibrant picture quality.",
+      "Specification": ["55-inch screen", "4K resolution", "HDR support"],
+      "availability": true
+    },
+    {
+      "product_id": 5,
+      "product_title": "OLED Smart TV",
+      "product_image": "https://i.ibb.co.com/0DjJPTZ/tel2.jpg",
+      "category": "Televisions",
+      "price": 1299,
+      "description": "Premium OLED TV with lifelike visuals.",
+      "Specification": ["65-inch screen", "4K resolution", "Dolby Vision"],
+      "availability": false
+    },
+    {
+      "product_id": 6,
+      "product_title": "Budget Smart TV",
+      "product_image": "https://i.ibb.co.com/QNfyzxg/tel3.jpg",
+      "category": "Televisions",
+      "price": 399,
+      "description": "Affordable Smart TV with essential features.",
+      "Specification": ["50-inch screen", "1080p resolution", "Wi-Fi enabled"],
+      "availability": true
+    },
+    {
+      "product_id": 7,
+      "product_title": "Wireless Headphones",
+      "product_image": "https://i.ibb.co.com/bWbjLQq/wirehead.jpg",
+      "category": "Accessories",
+      "price": 199,
+      "description": "High-quality wireless headphones with noise cancellation.",
+      "Specification": ["Bluetooth 5.0", "ANC", "30-hour battery life"],
+      "availability": true
+    },
+    {
+      "product_id": 8,
+      "product_title": "Gaming Headset",
+      "product_image": "https://i.ibb.co.com/zm8JqQM/gaminghead.jpg",
+      "category": "Accessories",
+      "price": 99,
+      "description": "A durable headset for an immersive gaming experience.",
+      "Specification": ["7.1 surround sound", "Detachable mic", "RGB lighting"],
+      "availability": true
+    },
+    {
+      "product_id": 9,
+      "product_title": "Fitness Tracker",
+      "product_image": "https://i.ibb.co.com/820gYg2/fit.jpg",
+      "category": "Accessories",
+      "price": 49,
+      "description": "Track your daily activities and health metrics.",
+      "Specification": ["Heart rate monitor", "Step tracker", "Sleep tracking"],
+      "availability": false
+    },
+    {
+      "product_id": 10,
+      "product_title": "High-Speed Laptop",
+      "product_image": "https://i.ibb.co.com/0qz7y9H/lap11.jpg",
+      "category": "Laptops",
+      "price": 1199,
+      "description": "A high-speed laptop for professional use.",
+      "Specification": ["16GB RAM", "512GB SSD", "Intel i7 processor"],
+      "availability": true
+    },
+    {
+      "product_id": 11,
+      "product_title": "Gaming Laptop",
+      "product_image": "https://i.ibb.co.com/VgSxrn7/lap2.jpg",
+      "category": "Laptops",
+      "price": 1499,
+      "description": "A powerful laptop for gaming enthusiasts.",
+      "Specification": ["32GB RAM", "1TB SSD", "NVIDIA RTX 3080"],
+      "availability": false
+    },
+    {
+      "product_id": 12,
+      "product_title": "Budget Laptop",
+      "product_image": "https://i.ibb.co.com/frX85P0/lap3.jpg",
+      "category": "Laptops",
+      "price": 699,
+      "description": "An affordable laptop for everyday tasks.",
+      "Specification": ["8GB RAM", "256GB SSD", "Intel i3 processor"],
+      "availability": true
+    }
+  ]
+  
