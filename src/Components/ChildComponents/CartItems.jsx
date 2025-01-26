@@ -1,9 +1,9 @@
 import React from 'react';
 
-const CartItems = () => {
+const CartItems = ({item}) => {
     return (
         <div>
-            cart items
+            {item.price}
         </div>
     );
 };

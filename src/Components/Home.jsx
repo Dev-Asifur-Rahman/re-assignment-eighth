@@ -10,11 +10,11 @@ import { ContextProvider } from "../Js_Folder/context";
 import cartimage from "../../images/Group 1.png";
 import wishlistimage from "../../images/Group 2.png";
 import banner from "../../images/banner.jpg";
+import { get_cart, get_wishlist } from "../Js_Folder/localstorage";
 
 const Home = () => {
   const [data, setData] = useState([]);
-  const [wishlist, setWishlist] = useState([]);
-  const [cart, setCart] = useState([]);
+
   const location = useLocation();
   const get_data = useLoaderData().data;
 
@@ -27,8 +27,11 @@ const Home = () => {
       titleElement.innerHTML = "Gadget Heaven";
     }
   }, [location.pathname]);
+
+  const Get_Cart = get_cart();
+  const Get_WishList = get_wishlist();
   return (
-    <div className="w-[95vw] mx-auto">
+    <div className="lg:w-[95vw] w-full mx-auto">
       {/* banner section for other route  */}
       <div
         style={{ padding: "8px" }}
@@ -43,24 +46,33 @@ const Home = () => {
           <NavLink to={"dashboard"}>Dashboard</NavLink>
         </nav>
         <div className="flex items-center gap-2">
-          <Link to={'/dashboard'}>
-            <img src={cartimage} alt="" />
+          <Link to={"/dashboard"}>
+            <div className="indicator">
+              <span className="indicator-item  text-[8px]  text-white bg-black badge top-[5px] rounded-full badge-sm">
+                {Get_Cart.length}
+              </span>
+              <img src={cartimage} alt="" />
+            </div>
           </Link>
-          <Link to={'/dashboard'}>
-            <img src={wishlistimage} alt="" />
+          <Link to={"/dashboard"}>
+            <div className="indicator">
+              <span className="indicator-item  text-[8px]  text-white bg-black badge top-[5px] rounded-full badge-sm">
+                {Get_WishList.length}
+              </span>
+              <img src={cartimage} alt="" />
+            </div>
           </Link>
         </div>
       </div>
       {/* banner section  for home */}
       <section
-        style={{ marginBottom: `420px` }}
-        className={`${
+        className={`lg:px-5 pt-2 mb-5 lg:mb-[420px] ${
           location.pathname === "/"
             ? window.innerWidth > 768
               ? "inline-flex"
               : "hidden"
             : "hidden"
-        } w-full lg:h-[70vh] bg-[#9538E2] relative rounded-[8px] flex-col items-center gap-4`}
+        } w-full lg:h-[70vh] h-fit py-4 bg-[#9538E2] relative rounded-[8px] flex-col items-center gap-4`}
       >
         <div
           style={{ padding: "8px" }}
@@ -73,12 +85,22 @@ const Home = () => {
             <NavLink to={"dashboard"}>Dashboard</NavLink>
           </nav>
           <div className="flex items-center gap-2">
-          <Link to={'/dashboard'}>
-            <img src={cartimage} alt="" />
-          </Link>
-          <Link to={'/dashboard'}>
-            <img src={wishlistimage} alt="" />
-          </Link>
+            <Link to={"/dashboard"}>
+              <div className="indicator">
+                <span className="indicator-item  text-[8px]  text-white bg-black badge top-[5px] rounded-full badge-sm">
+                  {Get_Cart.length}
+                </span>
+                <img src={cartimage} alt="" />
+              </div>
+            </Link>
+            <Link to={"/dashboard"}>
+              <div className="indicator">
+                <span className="indicator-item  text-[8px]  text-white bg-black badge top-[5px] rounded-full badge-sm">
+                  {Get_WishList.length}
+                </span>
+                <img src={wishlistimage} alt="" />
+              </div>
+            </Link>
           </div>
         </div>
         <p className="lg:text-5xl text-4xl font-bold text-center text-white w-[60%]">
@@ -105,11 +127,7 @@ const Home = () => {
         value={{
           color: "silver",
           data,
-          setData,
-          wishlist,
-          setWishlist,
-          cart,
-          setCart,
+          setData
         }}
       >
         <Outlet></Outlet>

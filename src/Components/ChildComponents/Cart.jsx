@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { clear_cart, get_cart } from "../../Js_Folder/localstorage";
 import CartItems from "./CartItems";
 import { useNavigate } from "react-router";
+import success_icon from "../../../images/Group.png";
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -10,15 +11,28 @@ const Cart = () => {
   useEffect(() => {
     setCart(Get_Cart);
   }, []);
+ 
+
   let price = 0;
   Get_Cart.map((item) => (price += item.price));
 
+  const purchase_button =  document.getElementById('purchase')
+  useEffect(()=>{
+    if(purchase_button && Cart?.length === 0){
+        purchase_button.setAttribute('disabled',true)
+      }
+  },[Cart])
   function delete_cart(e) {
     clear_cart();
-    document.getElementById('my_modal_1').showModal()
+    purchase_button.setAttribute('disabled',true)
+    document.getElementById("my_modal_1").showModal();
   }
-  function close_modal(){
+  function close_modal() {
     navigate("/");
+  }
+  function sort_items() {
+    const sortedItems = [...Get_Cart].sort((a, b) => b.price - a.price);
+    setCart(sortedItems);
   }
 
   return (
@@ -29,10 +43,13 @@ const Cart = () => {
           <p id="cost" className="font-bold text-xl">
             Total : {price}$
           </p>
-          <button className=" btn rounded-3xl text-white bg-violet-400 hover:bg-violet-500 ">
+          <button
+            onClick={sort_items}
+            className=" btn rounded-3xl text-white bg-violet-400 hover:bg-violet-500 "
+          >
             Sort by Price
           </button>
-          <button
+          <button id="purchase"
             onClick={delete_cart}
             className="btn  text-white bg-violet-400 hover:bg-violet-500  rounded-3xl"
           >
@@ -47,18 +64,23 @@ const Cart = () => {
             ))
           : "No items on cart"}
       </section>
-      {/* Open the modal using document.getElementById('ID').showModal() method */}
+      {/* modal  */}
       <dialog id="my_modal_1" className="modal">
         <div className="modal-box">
-          <h3 className="font-bold text-lg">Hello!</h3>
-          <p className="py-4">
-            Press ESC key or click the button below to close
-          </p>
-          <div className="modal-action">
-            <form method="dialog">
-              {/* if there is a button in form, it will close the modal */}
-              <button onClick={close_modal} className="btn">Close</button>
-            </form>
+          <div className="flex flex-col items-center gap-2">
+            <div className="">
+              <img src={success_icon} alt="" />
+            </div>
+            <p className="font-bold text-2xl">Payment Successful</p>
+            <p className="font-medium text-base">Thanks for purchasing</p>
+            <p className="font-medium text-base">Total Amount : {price}$</p>
+            <div className="modal-action w-full px-2">
+              <form method="dialog" className="w-full">
+                <button onClick={close_modal} className="btn rounded-3xl w-full">
+                  Close
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </dialog>

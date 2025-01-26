@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
-import { data, useParams } from "react-router";
+import { data, useNavigate, useParams } from "react-router";
 import { ContextProvider } from "../../Js_Folder/context";
 import wishlistimage from "../../../images/Group 2.png";
 import CartLogo from '../../../images/Frame.png'
-import { get_cart, set_item_to_cart } from "../../Js_Folder/localstorage";
+import { get_cart, get_wishlist, set_item_to_cart, set_item_to_wishlist } from "../../Js_Folder/localstorage";
 
 const Details = () => {
+  const navigate = useNavigate()
   const id_number = useParams().id;
   const [all_data, setAllData] = useState([]);
   const [id, setId] = useState({});
@@ -26,6 +27,21 @@ const Details = () => {
     }
     else{
       set_item_to_cart(item)
+      navigate('/')
+    }
+  }
+
+  const addToWishlist = (item) =>{
+    
+    const Wishlist = get_wishlist()
+    const id = item.product_id
+    const find_item = Wishlist.find(item=>item.product_id == id)
+    if(find_item){
+      alert('Already Added')
+    }
+    else{
+      set_item_to_wishlist(item)
+      navigate('/')
     }
   }
   //     const {
@@ -49,7 +65,7 @@ const Details = () => {
           <img src={id?.product_image} alt="" />
           <div className="flex gap-2 items-center">
             <button onClick={()=>{addToCart(id)}} className=" btn text-white text-base rounded-3xl font-bold bg-[#9538E2]">Add to Cart <img src={CartLogo} alt="" /></button>
-            <div className="">
+            <div onClick={()=>{addToWishlist(id)}} className="">
               <img src={wishlistimage} alt="" />
             </div>
           </div>

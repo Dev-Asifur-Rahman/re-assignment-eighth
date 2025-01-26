@@ -14,8 +14,10 @@ const get_wishlist = () =>{
 }
 
 const set_item_to_wishlist = (item) =>{
-    const get_wishlist  = get_wishlist()
-    console.log(get_wishlist)
+    const Wishlist  = get_wishlist()
+    Wishlist.push(item)
+    const Stringify_Wishlist = JSON.stringify(Wishlist)
+    localStorage.setItem('Wishlist',Stringify_Wishlist)
 }
 
 function clear_cart (){
