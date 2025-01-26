@@ -21,36 +21,38 @@ const Dashboard = () => {
           level. From smart devices to the coolest accessories, we have it all!
         </p>
         <div id="dashboard_button" className="flex justify-center gap-4">
-          <button className='btn btn-ghost rounded-2xl dashboard_active'
+          <button
+            className=" btn btn-ghost rounded-2xl dashboard_active"
             onClick={(e) => {
               const buttons = document.querySelectorAll(
                 "#dashboard_button button"
               );
-              
+
               for (const button of buttons) {
                 button.classList.remove("dashboard_active");
-                button.classList.add("outline")
+                button.classList.add("outline");
               }
               setToggle(1);
               e.target.classList.add("dashboard_active");
-              e.target.classList.remove("outline")
+              e.target.classList.remove("outline");
             }}
           >
             Cart
           </button>
-          <button className='btn btn-ghost rounded-2xl outline'
+          <button
+            className="btn btn-ghost rounded-2xl outline"
             onClick={(e) => {
               const buttons = document.querySelectorAll(
                 "#dashboard_button button"
               );
-              
+
               for (const button of buttons) {
                 button.classList.remove("dashboard_active");
-                button.classList.add("outline")
+                button.classList.add("outline");
               }
               setToggle(2);
               e.target.classList.add("dashboard_active");
-              e.target.classList.remove("outline")
+              e.target.classList.remove("outline");
             }}
           >
             Wishlist
