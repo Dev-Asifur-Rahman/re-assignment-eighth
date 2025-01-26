@@ -28,3 +28,8 @@ nav a.active{
 .clicked{
     background-color: #9538E2;
 }
+
+.dashboard_active{
+    /* color:#9538E2; */
+    background-color: white ;
+}

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { NavLink, Outlet, useLoaderData, useLocation } from "react-router";
 import { ContextProvider } from "../Js_Folder/context";
 import cartimage from "../../images/Group 1.png"
-import wishlistimage from "../../images/Group 1.png"
+import wishlistimage from "../../images/Group 2.png"
 import banner from "../../images/banner.jpg"
 
 const Home = () => {
@@ -24,7 +24,7 @@ const Home = () => {
   return (
     <div className="w-[95vw] mx-auto">
       {/* banner section for other route  */}
-      <div style={{padding:'8px'}} className={`${location.pathname==='/'?'hidden':'inline-flex'} lg:flex-row flex-col justify-between items-center w-full`}>
+      <div style={{padding:'8px'}} className={`${location.pathname==='/'?'hidden':'inline-flex'} lg:flex-row lg:gap-0 gap-3 flex-col justify-between items-center w-full`}>
           <p className="font-bold text-[24px]">Gadget Heaven</p>
           <nav className="flex items-center gap-4">
             <NavLink to={"/"}>Home</NavLink>
