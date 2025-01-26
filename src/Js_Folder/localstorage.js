@@ -3,8 +3,10 @@ function get_cart (){
 }
 
 const set_item_to_cart = (item) =>{
-    const get_cart  = get_cart()
-    console.log(get_cart)
+    const Cart  = get_cart()
+    Cart.push(item)
+    const Stringify_Cart = JSON.stringify(Cart)
+    localStorage.setItem('Cart',Stringify_Cart)
 }
 
 const get_wishlist = () =>{

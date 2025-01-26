@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { get_cart, set_item_to_cart } from '../../Js_Folder/localstorage';
+import { get_cart} from '../../Js_Folder/localstorage';
 import CartItems from './CartItems';
 
 const Cart = () => {
@@ -8,7 +8,7 @@ const Cart = () => {
     useEffect(()=>{
         setCart(Get_Cart)
     },[])
-    const set_Cart = set_item_to_cart
+
     return (
         <div>
             {
