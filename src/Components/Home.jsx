@@ -37,7 +37,7 @@ const Home = () => {
           </div>
         </div>
       {/* banner section  for home */}
-      <section style={{marginBottom:`420px`}} className={`${location.pathname === '/'?'inline-flex':'hidden'} w-full lg:h-[70vh] bg-[#9538E2] relative rounded-[8px] flex-col items-center gap-4`}>
+      <section style={{marginBottom:`420px`}} className={`${location.pathname === '/' ? (window.innerWidth > 768 ? 'inline-flex' : 'hidden') : 'hidden'} w-full lg:h-[70vh] bg-[#9538E2] relative rounded-[8px] flex-col items-center gap-4`}>
         <div style={{padding:'8px'}} className="flex justify-between items-center w-full">
           <p className="font-bold text-[24px] text-[#FFFFFF]">Gadget Heaven</p>
           <nav className="flex items-center gap-4">
