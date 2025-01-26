@@ -11,6 +11,7 @@ import cartimage from "../../images/Group 1.png";
 import wishlistimage from "../../images/Group 2.png";
 import banner from "../../images/banner.jpg";
 import { get_cart, get_wishlist } from "../Js_Folder/localstorage";
+import { ToastContainer } from "react-toastify";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -131,6 +132,7 @@ const Home = () => {
         }}
       >
         <Outlet></Outlet>
+        <ToastContainer />
       </ContextProvider.Provider>
     </div>
   );

@@ -4,6 +4,7 @@ import { ContextProvider } from "../../Js_Folder/context";
 import wishlistimage from "../../../images/Group 2.png";
 import CartLogo from '../../../images/Frame.png'
 import { get_cart, get_wishlist, set_item_to_cart, set_item_to_wishlist } from "../../Js_Folder/localstorage";
+import { toast } from "react-toastify";
 
 const Details = () => {
   const navigate = useNavigate()
@@ -23,10 +24,11 @@ const Details = () => {
     const id = item.product_id
     const find_item = Cart.find(item=>item.product_id == id)
     if(find_item){
-      alert('Already Added')
+      toast.error('Already added')
     }
     else{
       set_item_to_cart(item)
+      toast.success('Added Successfully')
       navigate('/')
     }
   }
@@ -37,10 +39,11 @@ const Details = () => {
     const id = item.product_id
     const find_item = Wishlist.find(item=>item.product_id == id)
     if(find_item){
-      alert('Already Added')
+      toast.error('Already added')
     }
     else{
       set_item_to_wishlist(item)
+      toast.success('Added Successfully')
       navigate('/')
     }
   }
