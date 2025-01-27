@@ -46,14 +46,14 @@ const HomeData = () => {
     }
   return (
     <div className=" flex lg:flex-row flex-col justify-between items-center">
-      <div id="buttons" className="lg:w-[30%] w-full border flex flex-col items-center gap-2 py-3">
+      <div id="buttons" className="lg:w-[30%] w-full flex flex-col items-center gap-2 py-3">
         <button className="btn clicked" onClick={get_data_by_category}>All</button>
         <button className="btn" onClick={get_data_by_category} >Smartphones</button>
         <button className="btn" onClick={get_data_by_category} >Televisions</button>
         <button className="btn" onClick={get_data_by_category}>Accessories</button>
         <button className="btn" onClick={get_data_by_category}>Laptops</button>
       </div>
-      <section className="lg:w-[70%] w-full border  grid lg:grid-cols-3 grid-cols-1 place-items-center">
+      <section className="lg:w-[70%] my-3 w-full  grid lg:grid-cols-3 md:grid-cols-2  grid-cols-1 lg:gap-y-4 gap-y-2 place-items-center">
             {
                 recieve_data.map(item=><Item item={item} key={item.product_id}></Item>)
             }

@@ -68,16 +68,12 @@ const Home = () => {
       {/* banner section  for home */}
       <section
         className={`lg:px-5 pt-2 mb-5 lg:mb-[420px] ${
-          location.pathname === "/"
-            ? window.innerWidth > 768
-              ? "inline-flex"
-              : "hidden"
-            : "hidden"
+          location.pathname === "/" ? "inline-flex" : "hidden"
         } w-full lg:h-[70vh] h-fit py-4 bg-[#9538E2] relative rounded-[8px] flex-col items-center gap-4`}
       >
         <div
           style={{ padding: "8px" }}
-          className="flex justify-between items-center w-full"
+          className="flex lg:flex-row lg:gap-0 gap-3 flex-col justify-between items-center w-full"
         >
           <p className="font-bold text-[24px] text-[#FFFFFF]">Gadget Heaven</p>
           <nav className="flex items-center gap-4">
@@ -128,7 +124,7 @@ const Home = () => {
         value={{
           color: "silver",
           data,
-          setData
+          setData,
         }}
       >
         <Outlet></Outlet>

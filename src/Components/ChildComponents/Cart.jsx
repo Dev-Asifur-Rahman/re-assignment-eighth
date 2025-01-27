@@ -34,13 +34,16 @@ const Cart = () => {
     const sortedItems = [...Get_Cart].sort((a, b) => b.price - a.price);
     setCart(sortedItems);
   }
-
+  const error_item = <div className='font-bold text-3xl text-center'>
+        No items added to Cart
+    </div>
   return (
     <div>
-      <section className="my-3 flex lg:flex-row items-center lg:justify-between">
+      <section className="my-3 flex lg:flex-row flex-col gap-3 lg:gap-0 items-center lg:justify-between">
         <p className="font-bold text-2xl">Cart</p>
         <div className="flex justify-between items-center px-3 gap-3">
-          <p id="cost" className="font-bold text-xl">
+          <p id="cost" className="font-bold text-center.
+          03 text-xl">
             Total : {price}$
           </p>
           <button
@@ -57,12 +60,12 @@ const Cart = () => {
           </button>
         </div>
       </section>
-      <section>
+      <section className='my-2 flex flex-col gap-2'>
         {Cart.length > 0
           ? Cart.map((item) => (
               <CartItems item={item} key={item.product_id}></CartItems>
             ))
-          : "No items on cart"}
+          : error_item}
       </section>
       {/* modal  */}
       <dialog id="my_modal_1" className="modal">
