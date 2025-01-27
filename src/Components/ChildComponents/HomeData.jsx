@@ -45,7 +45,7 @@ const HomeData = () => {
         setRecieved_Data(filtered_data)  
     }
   return (
-    <div className=" flex lg:flex-row flex-col justify-between items-center">
+    <div className=" flex lg:flex-row flex-col justify-between lg:items-start items-center">
       <div id="buttons" className="lg:w-[30%] w-full flex flex-col items-center gap-2 py-3">
         <button className="btn clicked" onClick={get_data_by_category}>All</button>
         <button className="btn" onClick={get_data_by_category} >Smartphones</button>

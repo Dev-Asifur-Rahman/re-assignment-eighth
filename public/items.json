@@ -7,7 +7,8 @@
       "price": 999,
       "description": "A high-performance smartphone with advanced features.",
       "Specification": ["6.7-inch display", "128GB storage", "5000mAh battery"],
-      "availability": true
+      "availability": true,
+      "rating":3
     },
     {
       "product_id": 2,
@@ -17,7 +18,8 @@
       "price": 299,
       "description": "An affordable smartphone for everyday use.",
       "Specification": ["6.1-inch display", "64GB storage", "4000mAh battery"],
-      "availability": true
+      "availability": true,
+      "rating":2
     },
     {
       "product_id": 3,
@@ -27,7 +29,8 @@
       "price": 799,
       "description": "A smartphone designed for gaming enthusiasts.",
       "Specification": ["6.8-inch display", "256GB storage", "6000mAh battery"],
-      "availability": false
+      "availability": false,
+      "rating":5
     },
     {
       "product_id": 4,
@@ -37,7 +40,8 @@
       "price": 599,
       "description": "A sleek 4K Smart TV with vibrant picture quality.",
       "Specification": ["55-inch screen", "4K resolution", "HDR support"],
-      "availability": true
+      "availability": true,
+      "rating":5
     },
     {
       "product_id": 5,
@@ -47,7 +51,8 @@
       "price": 1299,
       "description": "Premium OLED TV with lifelike visuals.",
       "Specification": ["65-inch screen", "4K resolution", "Dolby Vision"],
-      "availability": false
+      "availability": false,
+      "rating":5
     },
     {
       "product_id": 6,
@@ -57,7 +62,8 @@
       "price": 399,
       "description": "Affordable Smart TV with essential features.",
       "Specification": ["50-inch screen", "1080p resolution", "Wi-Fi enabled"],
-      "availability": true
+      "availability": true,
+      "rating":3
     },
     {
       "product_id": 7,
@@ -67,7 +73,8 @@
       "price": 199,
       "description": "High-quality wireless headphones with noise cancellation.",
       "Specification": ["Bluetooth 5.0", "ANC", "30-hour battery life"],
-      "availability": true
+      "availability": true,
+      "rating":1
     },
     {
       "product_id": 8,
@@ -77,7 +84,8 @@
       "price": 99,
       "description": "A durable headset for an immersive gaming experience.",
       "Specification": ["7.1 surround sound", "Detachable mic", "RGB lighting"],
-      "availability": true
+      "availability": true,
+      "rating":4
     },
     {
       "product_id": 9,
@@ -87,7 +95,8 @@
       "price": 49,
       "description": "Track your daily activities and health metrics.",
       "Specification": ["Heart rate monitor", "Step tracker", "Sleep tracking"],
-      "availability": false
+      "availability": false,
+      "rating":5
     },
     {
       "product_id": 10,
@@ -97,7 +106,8 @@
       "price": 1199,
       "description": "A high-speed laptop for professional use.",
       "Specification": ["16GB RAM", "512GB SSD", "Intel i7 processor"],
-      "availability": true
+      "availability": true,
+      "rating":2
     },
     {
       "product_id": 11,
@@ -107,7 +117,8 @@
       "price": 1499,
       "description": "A powerful laptop for gaming enthusiasts.",
       "Specification": ["32GB RAM", "1TB SSD", "NVIDIA RTX 3080"],
-      "availability": false
+      "availability": false,
+      "rating":1
     },
     {
       "product_id": 12,
@@ -117,7 +128,8 @@
       "price": 699,
       "description": "An affordable laptop for everyday tasks.",
       "Specification": ["8GB RAM", "256GB SSD", "Intel i3 processor"],
-      "availability": true
+      "availability": true,
+      "rating":4
     }
   ]
   
