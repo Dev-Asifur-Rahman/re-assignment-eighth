@@ -56,7 +56,7 @@ const Details = () => {
   };
   return (
     <div>
-      <div className="w-full bg-[#9538E2] text-center lg:h-[35vh] h-fit p-2">
+      <div className="w-full mb-[60vh] bg-[#9538E2] text-center lg:h-[35vh] h-fit p-2">
         <p className="text-white font-bold text-3xl">Product Details</p>
         <p className="text-base text-center text-white font-medium">
           Explore the latest gadgets that will take your experience to the next
