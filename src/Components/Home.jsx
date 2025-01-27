@@ -46,6 +46,7 @@ const Home = () => {
           <NavLink to={"/"}>Home</NavLink>
           <NavLink to={"statistics"}>Statistics</NavLink>
           <NavLink to={"dashboard"}>Dashboard</NavLink>
+          <NavLink to={"service"}>Service</NavLink>
         </nav>
         <div className="flex items-center gap-2">
           <Link to={"/dashboard"}>
@@ -81,6 +82,7 @@ const Home = () => {
             <NavLink to={"/"}>Home</NavLink>
             <NavLink to={"statistics"}>Statistics</NavLink>
             <NavLink to={"dashboard"}>Dashboard</NavLink>
+            <NavLink to={"service"}>Service</NavLink>
           </nav>
           <div className="flex items-center gap-2">
             <Link to={"/dashboard"}>

@@ -6,6 +6,7 @@ import Dashboard from "./Components/ChildComponents/Dashboard";
 import Details from "./Components/ChildComponents/Details";
 import HomeData from "./Components/ChildComponents/HomeData";
 import axios from "axios";
+import Service from "./Components/Service";
 
 
 
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
             {
                 path:'details/:id',
                 element:<Details></Details>
+            },
+            {
+                path:'service',
+                element:<Service></Service>
             }
         ]
     }
