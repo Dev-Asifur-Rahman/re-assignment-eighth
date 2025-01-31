@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import { ContextProvider } from "../../Js_Folder/context";
+
 import wishlistimage from "../../../images/Group 2.png";
 import CartLogo from "../../../images/Frame.png";
+
 import {
   get_cart,
   get_wishlist,
@@ -17,18 +18,24 @@ const Details = () => {
   const id_number = useParams().id;
   const [all_data, setAllData] = useState([]);
   const [id, setId] = useState({});
-  const { data } = useContext(ContextProvider);
+
   useEffect(() => {
-    setAllData(data);
-  }, [data]);
+    fetch('/items.json')
+    .then(res=>res.json())
+    .then(Data=>setAllData(Data))
+  },[]);
+
   useEffect(() => {
     if (all_data.length > 0) {
       const find_product = all_data.find(
         (single) => single.product_id == id_number
       );
-      setId(find_product);
+      if(find_product){
+        setId(find_product);
+      }
     }
   }, [all_data, id_number]);
+
   const addToCart = (item) => {
     const Cart = get_cart();
     const id = item.product_id;
@@ -56,7 +63,7 @@ const Details = () => {
   };
   return (
     <div>
-      <div className="w-full mb-[60vh] bg-[#9538E2] text-center lg:h-[35vh] h-fit p-2">
+      <div className="w-full lg:mb-[60vh] bg-[#9538E2] text-center lg:h-[35vh] h-fit p-2">
         <p className="text-white font-bold text-3xl">Product Details</p>
         <p className="text-base text-center text-white font-medium">
           Explore the latest gadgets that will take your experience to the next
@@ -110,6 +117,53 @@ const Details = () => {
           </div>
         </div>
       </div>
+      {/* show here details in small  */}
+      <div className="p-2 my-3 rounded-lg shadow-lg flex-col lg:hidden w-full h-fit ">
+          <div className="lg:w-[45%] lg:h-[50%] w-full self-center">
+            <img
+              src={id?.product_image}
+              className="lg:w-[60%] rounded-lg w-full h-full lg:mx-auto"
+              alt=""
+            />
+          </div>
+
+          <div className=" flex px-2 flex-col  items-start gap-2">
+            <p className="font-semibold text-2xl">{id?.product_title}</p>
+            <p className="font-semibold text-lg">Price : $ {id?.price}</p>
+            <p className="text-start text-base text-[#09080F99]">
+              {id?.description}
+            </p>
+            <p className="font-bold">Specification</p>
+            <ul className="flex flex-col items-start">
+              {id?.Specification?.map((spec, index) => {
+                return (
+                  <li key={index}>
+                    {index + 1}. {spec}
+                  </li>
+                );
+              })}
+            </ul>
+            {id && <Rating rating={id?.rating} key={id?.product_id}></Rating>}
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => {
+                  addToCart(id);
+                }}
+                className=" btn text-white text-base rounded-3xl font-bold bg-[#9538E2]"
+              >
+                Add to Cart <img src={CartLogo} alt="" />
+              </button>
+              <div
+                onClick={() => {
+                  addToWishlist(id);
+                }}
+                className=""
+              >
+                <img src={wishlistimage} alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
   );
 };
