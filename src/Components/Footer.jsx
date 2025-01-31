@@ -2,12 +2,12 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="flex bg-[#FFFFFF] shadow-2xl flex-col my-4 gap-3 w-full">
+    <div className="flex bg-[#FFFFFF] shadow-2xl flex-col my-6 py-4 gap-3 w-full">
       <p className="font-semibold text-center text-3xl">Gadget Heaven</p>
       <p className="font-semibold text-center text-base text-[#09080F99]">
         Leading the way in cutting-edge technology and innovation.
       </p>
-      <section className="flex bg-[#FFFFFF] lg:flex-row gap-3 flex-col items-start lg:justify-center">
+      <section className="flex bg-[#FFFFFF] lg:flex-row gap-3 flex-col lg:items-start items-center lg:justify-center">
         <div className="text-center">
           <p className="text-center font-bold text-lg">Services</p>
           <p className="font-normal text-center text-base text-[#09080F99]">

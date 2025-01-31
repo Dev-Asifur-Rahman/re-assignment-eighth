@@ -39,7 +39,8 @@ const Service = () => {
               cy="60%"
               outerRadius={80}
               fill="#8884d8"
-              label={({ name }) => name}
+              label={({ name,value }) => {
+                return window.innerWidth == 320? value : name}}
             />
           </PieChart>
         </ResponsiveContainer>
@@ -50,19 +51,19 @@ const Service = () => {
         <div className="stats stats-vertical lg:stats-horizontal shadow">
           <div className="stat">
             <div className="stat-title">Served Product</div>
-            <div className="stat-value">31K</div>
+            <div className="text-black stat-value">31K</div>
             <div className="stat-desc">Jan 1st - Feb 1st</div>
           </div>
 
           <div className="stat">
             <div className="stat-title">Most Buyers/Mo</div>
-            <div className="stat-value">4,200</div>
+            <div className="text-black stat-value">4,200</div>
             <div className="stat-desc">↗︎ 400 (22%)</div>
           </div>
 
           <div className="stat">
             <div className="stat-title">New Buyers/Mo</div>
-            <div className="stat-value">1,200</div>
+            <div className="text-black stat-value">1,200</div>
             <div className="stat-desc">↘︎ 90 (14%)</div>
           </div>
         </div>
@@ -71,7 +72,7 @@ const Service = () => {
         <p className="my-2 text-white bg-[#9538E2] w-full py-4 text-center font-bold text-3xl">Write Something</p>
         <textarea
           type="text"
-          placeholder="Accent"
+          placeholder="Write Here"
           className="textarea textarea-accent"
         ></textarea>
         <button className="btn btn-accent">Send</button>

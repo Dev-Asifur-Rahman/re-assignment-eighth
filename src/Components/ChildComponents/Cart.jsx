@@ -41,7 +41,7 @@ const Cart = () => {
     <div>
       <section className="my-3 flex lg:flex-row flex-col gap-3 lg:gap-0 items-center lg:justify-between">
         <p className="font-bold text-2xl">Cart</p>
-        <div className="flex justify-between items-center px-3 gap-3">
+        <div className="flex lg:justify-between lg:flex-row flex-col items-center px-3 gap-3">
           <p id="cost" className="font-bold text-center.
           03 text-xl">
             Total : {price}$

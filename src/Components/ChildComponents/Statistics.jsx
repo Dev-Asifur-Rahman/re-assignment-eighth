@@ -5,6 +5,19 @@ import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis } from "recharts";
 
 const Statistics = () => {
   const [Data, setData] = useState([]);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   const location = useLocation();
   useEffect(() => {
     const titleElement = document.getElementById("title");
@@ -25,12 +38,12 @@ const Statistics = () => {
           level. From smart devices to the coolest accessories, we have it all!
         </p>
       </div>
-      <p className=" font-bold text-3xl my-4">Statistics</p>
-      <div className=" lg:h-[60vh] w-full">
+      <p className=" font-bold lg:text-start md:text-start text-center text-3xl my-2">Statistics</p>
+      <div className="h-[40vh] w-full">
         {Data.length > 0 ?<ResponsiveContainer width="100%" height="100%">
           <BarChart width={150} height={40} data={Data}>
-          <XAxis dataKey="product_title" />
-          <YAxis dataKey="price" />
+            {windowWidth> 320 && <XAxis dataKey="product_title" /> }
+            {windowWidth > 320 && <YAxis dataKey="price" /> }
             <Bar dataKey="price" fill="#8884d8" />
           </BarChart>
         </ResponsiveContainer>:<div className="text-center text-3xl">No Data Available for Chart</div>}
